@@ -8,7 +8,6 @@ const server = http.createServer();
 });*/
 
 const io = require("socket.io")(server, {
-  origins: ["https://socket-client.vercel.app"],
   cors: {
     origin: "https://socket-client.vercel.app",
     methods: ["GET", "POST"],
