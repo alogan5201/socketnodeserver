@@ -1,12 +1,19 @@
 {
-  "name": "server",
+  "name": "websockets-socket.io",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.x"
+  },
+  "description": "",
   "main": "index.js",
-  "license": "MIT",
   "scripts": {
     "start": "node index.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "socket.io": "^4.1.2"
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
   }
 }
