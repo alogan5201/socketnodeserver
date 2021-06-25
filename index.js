@@ -9,6 +9,15 @@ const server = http.createServer();
 
 const io = require("socket.io")(server, {
   origins: ["https://socket-client.vercel.app"],
+  handlePreflightRequest: (req, res) => {
+    res.writeHead(200, {
+      "Access-Control-Allow-Origin": "https://socket-client.vercel.app",
+      "Access-Control-Allow-Methods": "GET,POST",
+      "Access-Control-Allow-Headers": "my-custom-header",
+      "Access-Control-Allow-Credentials": true,
+    });
+    res.end();
+  },
 });
 
 const PORT = process.env.PORT || 5000;
