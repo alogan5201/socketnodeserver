@@ -1,13 +1,17 @@
 const http = require("http");
 const server = http.createServer();
-const { Server } = require("socket.io");
-const io = new Server(server, {
+//const { Server } = require("socket.io");
+/*const io = new Server(server, {
   cors: {
     origin: "https://socket-client.vercel.app/",
   },
+});*/
+
+const io = require("socket.io")(server, {
+  origins: ["https://socket-client.vercel.app"],
 });
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000;
 let users = [];
 
 io.on("connection", (socket) => {
